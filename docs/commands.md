@@ -14,11 +14,11 @@ Peribot's Commands
 
 ### Setup Commands
 
-- prefix [new prefix]
+#### prefix [new prefix]
 
    **new prefix**: the symbol that you want to use as your servers new prefix.
 
-- help
+#### help
 
   Sends you a link to this site
 
@@ -28,3 +28,28 @@ Peribot's Commands
 ### Custom commands
 
 Server specific commands that you define! This is great for storing FAQs or important links!
+
+?> Aliases: cc
+
+
+#### > customcom add [trigger] [response]
+
+Adds a custom command to your server
+
+  **trigger**: what the bot is listening for to trigger your response
+
+  **response**: the text Peribot replies with when the trigger is sent
+
+#### customcom edit [trigger] [response]
+
+Edits a custom command response to something new.
+
+#### customcom delete [trigger]
+
+Deletes a custom command from your server
+
+#### customcom list
+
+Lists all the custom commands on your server.
+
+![custom command list](_media/cclist.png)

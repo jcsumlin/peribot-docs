@@ -22,10 +22,9 @@ Peribot's Commands
 
   Sends you a link to this site
 
-  aliases: phelp
+  ?> Aliases: phelp
 
-- customcom add [command] [response]
 
-  **command**: The trigger for Peribot to send the [response]
+### Custom commands
 
-  **response**: Text that Peribot should respond with then the [command] is issued.
+Server specific commands that you define! This is great for storing FAQs or important links!

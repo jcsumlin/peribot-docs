@@ -53,3 +53,8 @@ Deletes a custom command from your server
 Lists all the custom commands on your server.
 
 ![custom command list](_media/cclist.png)
+
+### Animal Picture commands
+
+Send random cute animals in your channels!
+![Cat Gif](https://cdn.nekos.life/meow/0164A.gif)

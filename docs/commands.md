@@ -14,19 +14,21 @@ Peribot's Commands
 
 ### Setup Commands
 
-#### prefix [new prefix]
+#### !prefix [new prefix]
 
    **new prefix**: the symbol that you want to use as your servers new prefix.
 
-#### help
+#### !help
 
   Sends you a link to this site
 
   ?> Aliases: phelp
   
-#### ping
+#### !ping
 
-***Pong!***
+Returns the Server latency, API latency, and uptime of the bot
+ 
+Ping ***Pong!***
 
 
 ### Custom commands
@@ -36,23 +38,25 @@ Server specific commands that you define! This is great for storing FAQs or impo
 ?> Aliases: cc
 
 
-#### > customcom add [trigger] [response]
+#### !customcom add [trigger] [response]
 
 Adds a custom command to your server
 
   **trigger**: what the bot is listening for to trigger your response
 
   **response**: the text Peribot replies with when the trigger is sent
+  
+?> Exmaple: !cc add hello world | Peribot will listen for !hello and respond with "world"
 
-#### customcom edit [trigger] [response]
+#### !customcom edit [trigger] [response]
 
 Edits a custom command response to something new.
 
-#### customcom delete [trigger]
+#### !customcom delete [trigger]
 
 Deletes a custom command from your server
 
-#### customcom list
+#### !customcom list
 
 Lists all the custom commands on your server.
 
@@ -61,28 +65,28 @@ Lists all the custom commands on your server.
 ### Fun Commands
 Fun commands that typically respond with an image or text
 
-#### cats
+#### !cats
 
 Sends a single cat gif/image in the current channel
 ![Cat Gif](https://cdn.nekos.life/meow/0164A.gif)
 
-#### catsbomb [number]
+#### !catsbomb [number]
 
   **number**: (Optional) the number of images that should be sent
 
 Sends 5 consecutive gifs/images of cute cats!
 
-#### pugs
+#### !pugs
 
 Sends a single pug gif/image in the current channel
 
 
-#### pugsbomb [number]
+#### !pugsbomb [number]
   **number**: (Optional) the number of images that should be sent
 
 Sends 5 consecutive gifs/images of cute pugs
 
-#### eightball [question]
+#### !eightball [question]
   **question**: (Optional) The question that you want Peribot to answer 
 
 The bot will answer your question with the typical eight ball fashion.
@@ -91,41 +95,41 @@ The bot will answer your question with the typical eight ball fashion.
 
 ?> Aliases: 8b
 
-#### topic
+#### !topic
 
 Gets a random chat topic to keep the chat going.
 
-#### roll [upperbound]
+#### !roll [upperbound]
   **upperbound**: the maximum number of sides on the die you're rolling
 
 Rolls a virtual die and returns the result.
 
-#### flip [user]
+#### !flip [user]
   **user**: (Optional) The user that you're flipping
   
 Flips a coin ... or a user. But not me.
 
-#### ded
+#### !ded
 
 Shows how dead the chat is... Time to revive it!
 
-#### uwu [text]
+#### !uwu [text]
 
   **text**: The text that you want to UwU-ify
 
-#### hug [user]
+#### !hug [user]
 
   **user**: The discord user you are trying to hug
 
 Sends a random gif of a hug to brighten a users day :) 
 
-#### kiss [user]
+#### !kiss [user]
 
   **user**: The discord user you are trying to kiss
 
 Sends a random gif of a kiss to brighten a users day :) 
 
-#### compliment [user]
+#### !compliment [user]
 
   **user**: The discord user you are trying to compliment
 
@@ -168,7 +172,7 @@ Replys with an embed containing a basic overview of the server in which the comm
 
 This will mass delete a set number of messages. The user must have Manage Messages permissions to use this command.
 
-#### pin [message]
+#### !pin [message]
 
   **message**: The message you want to pin
   
@@ -176,15 +180,15 @@ This will take your message place it in an embed and pin it in the channel that 
 
 ![Pinned Message](./_media/pin.png)
 
-#### kick [user]
+#### !kick [user]
 
 Will kick a member. The user must have Kick User permissions
 
-#### ban [user]
+#### !ban [user]
 
 Will ban a member. The user must have Ban User permissions
 
-#### unban [user]
+#### !unban [user]
 
-Will unban a member. The user must have Ban User permissions
+Will unban a member. The user must have Ban  User permissions
 

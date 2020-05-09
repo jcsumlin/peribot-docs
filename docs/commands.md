@@ -131,11 +131,23 @@ Shows how dead the chat is... Time to revive it!
 This is a very dangerous command, its full potential has not fully been explored. I would recommend extreme caution when using it.
 
 
-#### !hug [user]
+#### !hug [user] [number]
 
   **user**: The discord user you are trying to hug
+  
+  **number**: (Optional) The specific hug that you want to send
 
 Sends a random gif of a hug to brighten a users day :)
+
+#### !pat [user] [number]
+
+  **user**: The discord user you are trying to headpat
+  
+  **number**: (Optional) The specific headpat that you want to send
+
+
+Sends a random gif of a headpat to brighten a users day :)
+
 
 #### !kiss [user]
 
@@ -454,4 +466,19 @@ Look up words as they are defined in the Urban Dictionary. Due to the NSFW natur
   
   **definition number**: The definition number you want to see (1-10) 
   
-### Welcome
+### Welcome Messages
+
+#### !welcome enable [channel] [message]
+
+  **channel**: The channel you want the [message] will be sent in
+  
+  **message**: The message that will be sent in the [channel] every time a user joins you can add "[user]" to your message and it will be replaced with a mention of the new user.
+  
+This is a great way to welcome new users to your server and remind them to read rules or something like that!
+
+
+#### !welcome disable
+
+This will disable the welcome message that you configured above
+
+  

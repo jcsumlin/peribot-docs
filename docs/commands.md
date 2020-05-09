@@ -26,7 +26,7 @@ All commands in the docs will be using the default prefix of "!" if you have cha
 
 ?> Aliases: !phelp (This helps avoid getting spammed by every bot that may share the same prefix)
 
-#### ping
+#### !ping
 
 Returns the Server latency, API latency, and uptime of the bot
  

@@ -32,7 +32,6 @@ Returns the Server latency, API latency, and uptime of the bot
  
 Ping ***Pong!***
 
-
 ### Custom commands
 
 Server specific commands that you define! This is great for storing FAQs or important links!
@@ -102,17 +101,21 @@ The bot will answer your question with the typical eight ball fashion.
 
 Gets a random chat topic to keep the conversation going.
 
-#### !roll [upperbound]
+#### !roll [die] [modification] [modifier]
 
 ?> Aliases: !r
 
-  **upperbound**: the maximum number of sides on the die you're rolling
+  **die**: The type of die that you're rolling. Ex: d20 (the d is optional)
+  **modification**: (Optional) how to modify the result (Options: + - * /)
+  **modifier**: How much to modify your roll by
+
 
 Rolls a virtual die and returns the result.
 
-**example**: `!roll 20` -> `:game_die: You rolled a 11`
+**example**: `!roll d20` `!roll d10 + 2` (rolls a d10 die then adds 2 to the result)
 
 #### !flip [user]
+  
   **user**: (Optional) The user that you're flipping
 
 Flips a coin ... or a user. But not me.
@@ -122,10 +125,11 @@ Flips a coin ... or a user. But not me.
 Shows how dead the chat is... Time to revive it!
 
 #### !uwu [text]
+  
+  **text**: The text that you want to UwU-ify
 
 This is a very dangerous command, its full potential has not fully been explored. I would recommend extreme caution when using it.
 
-  **text**: The text that you want to UwU-ify
 
 #### !hug [user]
 
@@ -157,12 +161,33 @@ Replies with the a larger image version of the designated emoji.
 
 **result** ![](https://cdn.discordapp.com/emojis/674712394341154824.gif)
 
+#### !xkcd [number]
+
+  **number**: (Optional) the specific XKCD comic you want to see. If none is provided it will show you the most recent
+  
+This command will show you the famous XKCD comics in an embed.
 
 ###User Info
 
 ####!avatar
-Get user's avatar in its full form.
+Get user's avatar in its full image form.
 
+#### !userinfo [user]
+
+?> Aliases: !ui, !user, !info, !uinfo
+
+**user**: (Optional) The user you want to return information about. Can either be in the form of a mention, their user name, nickname, or user id
+
+
+Will return some basic information about a given user or yourself
+- Their name & discriminator
+- User ID
+- Nickname
+- Status
+- In Voice Channel
+- Highest Role
+- Account Created Date
+- Server Join Date
 
 ### Server Tools
 
@@ -174,18 +199,18 @@ This will contain server tools and moderation commands that can be used to quick
 
 ####!serverinfo
 
-Replies with an embed containing a basic overview of the server in which the command was run
+?> Aliases: !si, !server, !sinfo
 
-?> Aliases: !si
+Replies with an embed containing a basic overview of the server in which the command was run
 
 ####!rolecolor [role] [color]
 
   **role**: The role you want to change the color of.
 
-  **color**: The color you want to set the role too. This can be a word or a hex
-     IE: Red, Green, Orange, #FFF000 etc.
+  **color**: The color you want to set the role too. This can be a word or a hex code
+     Ex: Red, Green, Orange, #FFF000
 
-  This will change the color of a role. The user must have Manage Roles permissions to use this command.
+  This will change the color of a role. The user must have Manage Roles permissions to use this command. The bot's highest role also must be higher than the role that you are trying to update. Its typically a good idea to have the bot's role at the top of your server's role list. 
 
   **example** `!rolecolor @Staff Blue`
 
@@ -222,6 +247,33 @@ Will unban a member. The user must have Ban  User permissions
 
 #### !modlogset channel [channel]
 
+  **channel**: The channel that you want to have logs sent to.
+  
+This will track all the important things that go on in your server and output all the events to the indicated channel.
+
+#### !modlogset toggle [toggle]
+
+  **toggle**: (Optional) The logging that you want to Enable/Disable. If you dont send a toggle Peribot will send all the toggles and their status.
+  ##### Available Toggles
+    Join: When a member joins
+    Leave: When a member leaves
+    Ban: When a member is banned
+    Voicechat: When a member is moved in a voice channel
+    Message edit: When a message is edited, will show before and after
+    Message delete: When a message is deleted, will show message contents
+    Role edit: When a role is edited, will show before and after
+    Channels: When a channel is created
+    Nicknames: When a user's nickname changes
+    
+Toggles have two states: 
+
+False = not being logged.
+
+True = being logged.
+  
+#### !modlogset disable
+
+This command toggles the logging system completely. If it is enabled it will disable it and vise versa. 
 
 ### Meme commands
 A collection of commands use to make and share memes.
@@ -250,7 +302,7 @@ You can optionally use just top text or bottom text like this:
 
 This will generate a "top text - bottom text" meme using this image
 
-![rogu](./_media/rogu.jpeg)
+![rogu](./_media/rogu.jpg)
 
   **top text**: Text you want to appear at the top of the image. White font color with black outline
 
@@ -261,3 +313,145 @@ This will generate a "top text - bottom text" meme using this image
 You can optionally use just top text or bottom text like this:
 `!rogu top text only`
 `!rogu ,bottom text only`
+
+### Polls
+Create a poll with custom answers!
+
+#### !poll [question], [option 1], [...], [option 10]
+
+  **question**: The question that you want to ask
+  
+  **option 1-10**: The possible options that a user can choose from, up to 10
+  
+  ?> The question and options can be delineated using either a `,` like its shown above or a `|`
+  
+  Users will be able to react to the poll embed casting their vote for 1 or more option.
+
+#### !quickpoll [question]
+
+  **question**: The question that you want to ask
+
+  This is similar to the !poll command above but instead of custom options it will allow a user to vote using `:thumbsup:` `:person_shrugging:` and `:thumbsdown:` essentially Yes, Maybe, and No. Great for simple questions.
+  
+  
+### Reaction Roles
+
+?> Aliases for all the reaction role commands: !rr [subcommand] [args]
+
+#### !reactionroles list
+
+This will list all the groups of reaction roles that your server has created.
+
+#### !reactionroles role add @[role] [emoji] [group name]
+
+ **role**: The role that users can obtain by reacting to a sent group.
+ 
+ **emoji**: The emoji that users will use to obtain the [role] above.
+ 
+ **group name**: the reaction role group that this role will be added to. To create a group see !reactionroles group add
+
+This will add a role to a pre-existing reaction role group with the provided emoji as the reaction that's to be used to obtain the mentioned.
+
+
+#### !reactionroles group add [group name]
+
+ **group name**: The name of the group that you want to create
+ 
+ Create a reaction role group that can contain many roles for a user to react to in order to obtain them. This name is case sensitive and you can always see any groups that you've created using !reactionroles list
+ 
+
+#### !reactionroles send [group name]
+
+  **group name**: the name of the group that you want to send
+  
+Sends a group of reaction roles for users to obtain by reacting using the preset emojis. Please note that you can only send a specific group once, if you resend this command the previous embed containing reaction roles will no longer work.
+
+When a user adds a reaction to the embed they will be given the associated role and when they remove it it will likewise remove the associated role.
+### Reminders
+
+Users can ask to be reminded of things and Peribot will private message them at the prescribed time.
+
+#### !remindme [quantity] [time unit] [reminder]
+
+  **quantity**: the quantity of time units to use when scheduling the reminder
+  
+  **time unit**: minutes / hours / days / weeks / months. Note: you can use a unit with or without the (s) it doesn't make a difference to the bot.
+  
+Set a reminder for yourself!
+
+Example: `!remindme 1 hour Do your homework!!`
+
+#### !forgetme
+
+This will remove all your upcoming reminders. This cannot be undone.
+
+
+
+### Starboard / Scrapbook
+
+Save all the best moments of your server!
+
+#### !starboard setup [channel] [emoji | :star:] [allowed role | @everyone]
+
+  **channel**: The channel where all your servers best moments will be stored.
+  
+  **emoji**: (Optional | default :star:) the emoji that the bot will look for on messages to save them
+  
+  **allowed role** (Optional | default @everyone) The role a user must have to be able to have their messages end up on the starboard
+  
+  ?> Aliases: !starboard **set**
+  
+#### !starboard ignore [channel]
+
+  **channel**: The channel that you want Peribot to ignore for the starboard
+  
+Peribot will ignore all messages in the given channel when it comes to the starboard. For example your server's log channel, or an admin only channel etc.
+
+#### !starboard emoji [emoji]
+
+  **emoji**: the emoji that the bot will look for on messages to save them
+
+This is command is to make adjustments to a preexisting starboard configuration.
+
+
+#### !starboard channel [channel]
+
+  **channel**: The channel where all your servers best moments will be stored moving forward.
+
+This is command is to make adjustments to a preexisting starboard configuration.
+
+#### !starboard threshold [integer]
+
+  **integer**: The number of reactions of the configured emoji that are needed for a message to appear on your servers starboard
+  
+This is command is to make adjustments to a preexisting starboard configuration.
+
+  
+#### !starboard add [role]
+
+  **role**: Add a role that's allowed to make it on the starboard
+  
+This is command is to make adjustments to a preexisting starboard configuration.
+
+#### !starboard remove [role]
+
+  **role**: Remove a role that's allowed to make it on the starboard
+  
+This is command is to make adjustments to a preexisting starboard configuration.
+
+#### !starboard clear
+  
+Clears the database of previous starred messages.
+
+
+### Urban Dictionary
+
+Look up words as they are defined in the Urban Dictionary. Due to the NSFW nature of these definitions this command can only be invoked in a NSFW channel.
+
+#### !urban [search term] [definition number]
+
+  **search term**: The term that you want to search Urban dictionary for.
+  
+  **definition number**: The definition number you want to see (1-10) 
+  
+### Welcome

@@ -24,7 +24,7 @@ All commands in the docs will be using the default prefix of "!" if you have cha
 
   Sends you a link to this site
 
-  ?> Aliases: !phelp (This helps avoid getting spammed by every bot that may share the same prefix)
+?> Aliases: !phelp (This helps avoid getting spammed by every bot that may share the same prefix)
 
 #### ping
 
@@ -335,7 +335,7 @@ Create a poll with custom answers!
   
   **option 1-10**: The possible options that a user can choose from, up to 10
   
-  ?> The question and options can be delineated using either a `,` like its shown above or a `|`
+?> The question and options can be delineated using either a `,` like its shown above or a `|`
   
   Users will be able to react to the poll embed casting their vote for 1 or more option.
 
@@ -411,7 +411,7 @@ Save all the best moments of your server!
   
   **allowed role** (Optional | default @everyone) The role a user must have to be able to have their messages end up on the starboard
   
-  ?> Aliases: !starboard **set**
+?> Aliases: !starboard **set**
   
 #### !starboard ignore [channel]
 

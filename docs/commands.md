@@ -21,7 +21,7 @@ All commands in the docs will be using the default prefix of "!" if you have cha
 
 #### !play [song]
 
-   **song**: Either a youtube video URL or the name of a song/video you want Peribot
+   **song**: Either a youtube video URL or the name of a song/video you want Peribot to search and play/queue
 
 #### !skip
   

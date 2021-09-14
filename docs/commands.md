@@ -17,7 +17,7 @@ All commands in the docs will be using the default prefix of "!" if you have cha
 
   Peribot's Music cog!
 
-  ?> Peribot will leave an empty voice channel after 60 seconds.
+?> Peribot will leave an empty voice channel after 60 seconds.
 
 #### !play [song]
 

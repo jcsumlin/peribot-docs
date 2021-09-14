@@ -13,6 +13,40 @@ All commands in the docs will be using the default prefix of "!" if you have cha
 
 ?> Arguments may be surrounded in [] for separation purposes don't use them in your commands.
 
+### Music Commands
+
+  Peribot's Music cog!
+
+  ?> Peribot will leave an empty voice channel after 60 seconds.
+
+#### !play [song]
+
+   **song**: Either a youtube video URL or the name of a song/video you want Peribot
+
+#### !skip
+  
+  Skips the currently playing song
+
+#### !queue [page]
+  
+  Displays the current queue of songs
+
+  **page**: (number) the page in the queue you want to view. Each page is 10 items long.
+
+#### !remove [index]
+  
+  Removes an item from your queue
+
+  **index**: (number) the number associated with the song you want to remove from your queue.
+
+#### !join
+  
+  Joins the voice channel you are currently in
+
+#### !leave
+  
+  Leaves the voice channel and clears the queue
+
 
 ### Setup Commands
 
